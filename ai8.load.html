@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>TensorFlow.js Tutorial - lemon</title>
+ 
+    <!-- Import TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+     
+</head>
+ 
+<body>
+    <h1>오늘 예상 판매량</h1>
+    <h2 id="sell"></h2>
+    <script>
+        const sell = document.getElementById('sell');
+
+        tf.loadLayersModel('localstorage://lemon').then(function(model){
+            const seller = model.predict(tf.tensor([20]));
+            seller.print();
+            sell.innerHTML = seller;
+            console.log();
+        })
+
+        
+    </script>
+</body>
+ 
+</html>

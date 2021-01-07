@@ -32,6 +32,8 @@
                  onEpochEnd:function(epoch, logs){
                      console.log('epoch', epoch, logs ,'RMSE=>',Math.sqrt(logs.loss) );
                     }}} // loss 추가 예제
+
+
                     // var weights = model.getWeights(); 
                     // var weight = weights[0].arraySync()[0][0];   //a//
                     // var bias = weights[1].arraySync()[0];        //b//
@@ -42,7 +44,7 @@
             // 4.1 기존의 데이터를 이용
              var 예측한결과 = model.predict(원인);
              예측한결과.print();
-             model.save('localstorage://lemon');
+             model.save('localstorage://lemon');//save!!!!!!!!!!!!!!!!!!!!
  
          });  
  
